@@ -1,0 +1,164 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+:root{
+    --primary-color:#fcf5e9;
+    --container-normal: 1100px;
+    --container-wide: 1400px;  
+    --container-narrow: 900px;
+    
+}
+
+body{
+    font-family: "Open Sans", sans-serif;
+    line-height: 1.6;
+}
+
+a{
+    text-decoration: none;
+    color:#333;
+}
+ul{
+    list-style: none;;
+}
+img{
+   max-width:100%;
+}
+
+/* Utility Classes */
+.bg-primary{
+    background:var(--primary-color);
+}
+
+/* Container */
+
+.container{
+    max-width:var(--container-normal);
+    margin:0 auto;
+    padding:0 1.5rem;
+}
+
+.container-lg{
+    max-width:var(--container-wide);
+}
+.container-sm{
+    max-width:var(--container-narrow);
+} 
+
+
+/* header */
+.header{
+    margin : 1.5rem auto;    
+}
+.header .logo{
+    width:130px;
+}
+.header .header-flex{
+    display:flex;
+    justify-content:space-between;
+    align-items: center;
+} 
+.header .main-menu{
+    display:flex;
+    /* justify-content: center;
+    align-items:center; */
+    gap: 1rem;
+}
+.header .main-menu a {
+    padding:0.5rem 1rem;
+}
+.header .main-menu a:hover {
+    background:var(--primary-color);
+}
+.current{
+    background:var(--primary-color);
+    font-weight: bolder;
+}
+
+/*Hero */
+.hero{
+    height:500px;
+    display: flex;  
+    justify-content: center;
+    align-items: center;
+    /* Flex is used here although there is only one rows because
+    of using justify content/ align item.  */
+}
+.hero h2{
+    font-size:3rem;
+    line-height:1.4;
+    font-weight: normal;
+  
+}
+
+.gallery-flex{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+.gallery-item{
+    width: calc(33.333% - 20px);
+    /* note:  when using calc, must give space before/after '-'.
+    otherwise, doesn't work */
+  
+}
+.gallery-item img{
+    border-radius:10px;
+}
+.gallery-item:hover{
+    opacity:0.9;
+}
+
+.footer{
+    border-top: 1px solid #aaa;
+    padding:2rem 1.5rem;
+    margin-top:2rem;
+
+}
+
+.footer-flex{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.footer img{
+    width: 120px;
+    height: 35px;
+}
+.footer h4{
+    font-size: 1rem;
+    margin-bottom:0.5rem;
+}
+.footer a{
+    margin:0.2rem;
+}
+/* media queries  */
+
+@media (max-width:768px){
+    .header .header-flex,
+    header .main-menu,
+    .footer-flex{
+        display:flex;
+        flex-direction: column;
+        gap:1.5rem;
+    }
+
+    .hero{
+        height:300px;
+     
+    }
+    .hero h2{
+        font-size:1.8rem;
+        text-align: center;
+    }
+    .gallery-item{
+        width:calc(50% - 20px)
+    }
+    .contact, .social{
+        text-align: center;
+    }
+}
