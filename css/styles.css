@@ -4,6 +4,7 @@
     box-sizing:border-box;
 }
 :root{
+    --dark-color:#333;
     --primary-color:#fcf5e9;
     --container-normal: 1100px;
     --container-wide: 1400px;  
@@ -31,7 +32,43 @@ img{
 /* Utility Classes */
 .bg-primary{
     background:var(--primary-color);
+    color:var(--dark-color);
+    
 }
+.bg-dark{
+    background:var(--dark-color);
+    color:#fff;
+}
+.bg-dark .bg-primary{
+    padding: 0 0.3rem;
+}
+
+/* note: lookup visually hidden for accesibility */
+.visually-hidden:not(:focus):not(:active) {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: auto;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+    white-space: nowrap;
+  }
+
+  .btn{
+    display:inline-block;
+    padding:1rem 2rem;
+    border:1px solid #333;
+    background:transparent;
+    font-family: inherit;
+    font-size:inherit;
+    cursor:pointer;
+  }
+  .btn:hover{
+    background: #333;
+    color:#fff
+  }
 .section-heading{
     font-size:1.6rem;
     text-align:center;
@@ -145,8 +182,8 @@ img{
 
 /* Services */
 .services{
-    background:#333;
-    color:white;
+    
+  
     padding:3rem 0 4rem;
     
 }
@@ -171,6 +208,41 @@ img{
     /* justify-content: space-between; */
     /* align-items: center; */
     text-align: center;
+}
+
+/* Contact  */
+.contact{
+    padding:3rem 0 4rem;
+}
+.contact p{
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.form-group {
+   margin:2rem 0;
+
+}
+
+.contact input, 
+.contact textarea{
+    border:none;
+    border-bottom:1px #333 solid;
+    width:100%;
+    font-family: inherit;
+    font-size:inherit;
+    padding-bottom:1rem;
+}
+.contact textarea{
+    height:200px;
+}
+
+.contact input:focus,
+.contact textarea:focus{
+    outline:0;
+}
+.contact .btn{
+    width:100%
 }
 
 @media (max-width:768px){
